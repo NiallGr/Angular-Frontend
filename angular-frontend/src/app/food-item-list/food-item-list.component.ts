@@ -23,6 +23,7 @@ export class FoodItemListComponent implements OnInit {
           })
         }
 
+        // Testing Array before connecting spring
     // this.foodItem = [{
     //         "id": 1,
     //         "name": "Apple",
