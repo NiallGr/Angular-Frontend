@@ -1,0 +1,24 @@
+<h2> Food Items </h2>
+
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> Food Name </th>
+            <th> Food Group </th>
+            <th> Price </th>
+        </tr>
+    </thead>
+    <tbody>
+                <tr *ngFor = "let foodItem of foodItem">
+                            <td> {{ foodItem.name }} </td>
+                            <td> {{ foodItem.foodGroup }} </td>
+                            <td> ${{ foodItem.price }} </td>
+                            
+                </tr>
+
+    </tbody>
+
+</table>
+
+
+
