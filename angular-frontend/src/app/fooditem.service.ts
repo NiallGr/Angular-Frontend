@@ -15,4 +15,8 @@ export class FooditemService {
   getfooditemsList(): Observable<FoodItem[]> {
  return this.httpClient.get<FoodItem[]>(`${this.baseURL}`);
   }
+
+  createFooditem(fooditem: FoodItem): Observable<Object> {
+    return this.httpClient.post(`${this.baseURL}`, fooditem);
+  }
 }
