@@ -47,6 +47,9 @@ export class FoodItemListComponent implements OnInit {
         this.router.navigate(['update-fooditem', id]);
     }
 
+    deleteFoodItem(id:number) {
+
+    }
 
     }
 

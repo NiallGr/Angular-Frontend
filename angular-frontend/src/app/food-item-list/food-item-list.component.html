@@ -15,8 +15,10 @@
                             <td> {{ foodItem.foodGroup }} </td>
                             <td> ${{ foodItem.price }} </td>
                             <td> 
-                                <button (click) ="updateFoodItem(foodItem.id)" class="btn btn-info"> Update</button>
+                                <button (click) ="updateFoodItem(foodItem.id)" class="btn btn-info" > Update</button>
+                                <button (click) ="deleteFoodItem(foodItem.id)" class="btn btn-danger" style="margin-left: 10px"> Delete</button>
                              </td>
+                           
                 </tr>
 
     </tbody>
