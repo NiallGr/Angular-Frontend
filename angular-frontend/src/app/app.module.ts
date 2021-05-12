@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FoodItemListComponent } from './food-item-list/food-item-list.component';
 import { CreateFooditemComponent } from './create-fooditem/create-fooditem.component';
+import { UpdateFooditemComponent } from './update-fooditem/update-fooditem.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { CreateFooditemComponent } from './create-fooditem/create-fooditem.compo
     AppComponent,
     FoodItemListComponent,
     CreateFooditemComponent,
+    UpdateFooditemComponent,
   
   ],
   imports: [

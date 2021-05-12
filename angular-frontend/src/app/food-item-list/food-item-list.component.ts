@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {FoodItem} from '../food-item'
 import { FooditemService } from '../fooditem.service';
 
@@ -12,7 +13,7 @@ export class FoodItemListComponent implements OnInit {
 
     foodItem: FoodItem[]
 
-  constructor(private foodItemService: FooditemService) { }
+  constructor(private foodItemService: FooditemService, private router: Router) { }
 
   ngOnInit(): void {
       this.getFoodItems();
@@ -42,6 +43,11 @@ export class FoodItemListComponent implements OnInit {
     //         "price": 8.5,
     //         "foodGroup": "Meat"
     //     }];
+    updateFoodItem(id: number) {
+        this.router.navigate(['update-fooditem', id]);
+    }
+
+
     }
 
 
