@@ -15,6 +15,11 @@ export class FoodItemListComponent implements OnInit {
 
   constructor(private foodItemService: FooditemService, private router: Router) { }
 
+  // **** FILTER NOT YET IMPLEMENTED
+    // filter(query: string) {
+    //   console.log(query);
+
+    // }
   ngOnInit(): void {
       this.getFoodItems();
   }
@@ -48,9 +53,15 @@ export class FoodItemListComponent implements OnInit {
     }
 
     deleteFoodItem(id:number) {
-
+        this.foodItemService.deleteFoodItem(id).subscribe(data => {
+          console.log(data);
+          this.getFoodItems();
+        })
     }
 
+    foodItemDetails(id:number) {
+      this.router.navigate(['fooditem-details', id]);
+    }
     }
 
 

@@ -1,28 +1,51 @@
 
-<div class="col-md-6 offset-md-3">
+<div class="col-md-10 offset-md-2">
 <h3> Create Food Item</h3>
 
-<form (ngSubmit) = "onSubmit()">
-
+<div class="row">
+<!--  LEFT SIDE -->
+    <div class="col-md-6">
+ <form (ngSubmit) = "onSubmit()">
     <div class="form-group">
         <label>Food Name</label>
-        <input type="text" class="form-control" id = "name"
+        <input #foodName="ngModel" type="text" class="form-control" id = "name"
         [(ngModel)] ="fooditem.name" name = "name">
     </div>
 
     <div class="form-group">
         <label>Food Group</label>
-        <input type="text" class="form-control" id = "foodGroup"
+        <input #foodGroup="ngModel" type="text" class="form-control" id = "foodGroup"
         [(ngModel)] ="fooditem.foodGroup" name = "foodGroup">
     </div>
 
     <div class="form-group">
         <label>Price</label>
-        <input type="text" class="form-control" id = "price"
+        <input #price="ngModel" type="text" class="form-control" id = "price" required
         [(ngModel)] ="fooditem.price" name = "price">
+    </div>
+
+    <div class="form-group">
+        <label>Image</label>
+        <input #imageUrl="ngModel" type="text" class="form-control" id = "price"
+        [(ngModel)] ="fooditem.imgUrl" name = "image">
     </div>
    
     <button class="btn btn-success mt-4" type="submit">Submit</button>
-</form>
+</form>       
+    </div>
+
+
+    <!-- RIGHT SIDE  -->
+    <div class="col-md-6">
+        <div class="card" style="width: 20rem;">
+            <img class="card-img-top" src="{{imageUrl.value}}">
+            <div class="card-body">
+              <h5 class="card-title">{{foodName.value}}</h5>
+              <p class="card-text">{{price.value | currency:'USD':true}}</p>
+            </div>
+          </div>
+    </div>
+</div>
+
 
 </div>

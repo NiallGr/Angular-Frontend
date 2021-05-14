@@ -1,5 +1,5 @@
 
-<div class="col-md-6 offset-md-3">
+<div class="col-md-10 offset-md-2">
     <h3> Update Food Item</h3>
     
     <form (ngSubmit) = "onSubmit()">
@@ -20,6 +20,12 @@
             <label>Price</label>
             <input type="text" class="form-control" id = "price"
             [(ngModel)] ="fooditem.price" name = "price">
+        </div>
+
+        <div class="form-group">
+            <label>Image</label>
+            <input type="text" class="form-control" id = "price"
+            [(ngModel)] ="fooditem.imgUrl" name = "image">
         </div>
        
         <button class="btn btn-success mt-4" type="submit">Submit</button>

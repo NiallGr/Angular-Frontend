@@ -4,5 +4,6 @@ export class FoodItem {
     name: string;
     foodGroup: string;
     price: number;
+    imgUrl: string;
     
 }

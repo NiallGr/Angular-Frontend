@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { FoodItemListComponent } from './food-item-list/food-item-list.component';
 import { CreateFooditemComponent } from './create-fooditem/create-fooditem.component';
 import { UpdateFooditemComponent } from './update-fooditem/update-fooditem.component';
+import { FooditemDetailsComponent } from './fooditem-details/fooditem-details.component';
+import { CustomerFoodItemListComponent } from './customer-food-item-list/customer-food-item-list.component';
 
 
 @NgModule({
@@ -16,6 +18,8 @@ import { UpdateFooditemComponent } from './update-fooditem/update-fooditem.compo
     FoodItemListComponent,
     CreateFooditemComponent,
     UpdateFooditemComponent,
+    FooditemDetailsComponent,
+    CustomerFoodItemListComponent,
   
   ],
   imports: [

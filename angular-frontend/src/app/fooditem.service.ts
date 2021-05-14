@@ -28,4 +28,8 @@ export class FooditemService {
   updateFoodItem(id: number, fooditem: FoodItem): Observable<object> {
     return this.httpClient.put(`${this.baseURL}/${id}`, fooditem);
   }
+
+  deleteFoodItem(id: number): Observable<object>{
+    return this.httpClient.delete(`${this.baseURL}/${id}`);
+  }
 }
