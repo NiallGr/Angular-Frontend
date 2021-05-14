@@ -25,9 +25,9 @@
                             <td> {{ foodItem.price | currency:'USD':true }} </td>
                             <!-- <td> {{ foodItem.imgUrl }} </td> -->
                             <td> 
-                                <button (click) ="updateFoodItem(foodItem.id)" class="btn btn-info" > Update </button>
+                                <button (click) ="updateFoodItem(foodItem.id)" class="btn btn-success" > Update </button>
                                 <button (click) ="deleteFoodItem(foodItem.id)" class="btn btn-danger" style="margin-left: 10px"> Delete </button>
-                                <button (click) ="foodItemDetails(foodItem.id)" class="btn btn-info" style="margin-left: 10px"> View </button>
+                                <button (click) ="foodItemDetails(foodItem.id)" class="btn btn-success" style="margin-left: 10px"> View </button>
                              </td>
                            
                 </tr>
