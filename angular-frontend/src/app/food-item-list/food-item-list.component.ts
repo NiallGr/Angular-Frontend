@@ -12,26 +12,31 @@ import { FooditemService } from '../fooditem.service';
 export class FoodItemListComponent implements OnInit {
 
 
-    foodItem: FoodItem[]
+    foodItem: FoodItem[] = [];
 
+
+      filters = {
+        keyword: ''
+      }
     
 
   constructor(private foodItemService: FooditemService, private router: Router) { }
 
-  // **** FILTER NOT YET IMPLEMENTED
-    // filter(query: string) {
-    //   console.log(query);
 
-    // }
   ngOnInit(): void {
       this.getFoodItems();
   }
-        private getFoodItems() {
+         getFoodItems() {
           this.foodItemService.getfooditemsList().subscribe(data => {
-            this.foodItem = data;
+            this.foodItem = this.filterFoodItems(data);
           })
         }
-
+        // Filter 
+        filterFoodItems(foodItem: FoodItem[]) {
+          return foodItem.filter((e) => {
+            return e.name.toLowerCase().includes(this.filters.keyword.toLowerCase());
+          })
+        }
 
         // Testing Array before connecting spring
     // this.foodItem = [{
@@ -66,6 +71,10 @@ export class FoodItemListComponent implements OnInit {
     foodItemDetails(id:number) {
       this.router.navigate(['fooditem-details', id]);
     }
+
+
+    
+
     }
 
 
