@@ -16,7 +16,8 @@ export class FoodItemListComponent implements OnInit {
 
 
       filters = {
-        keyword: ''
+        keyword: '',
+        SortBy: 'name'
       }
     
 
@@ -31,13 +32,18 @@ export class FoodItemListComponent implements OnInit {
             this.foodItem = this.filterFoodItems(data);
           })
         }
-        // Filter 
+        // Filter based on food item
         filterFoodItems(foodItem: FoodItem[]) {
           return foodItem.filter((e) => {
             return e.name.toLowerCase().includes(this.filters.keyword.toLowerCase());
+          // }).sort((a, b) => {
+          //   if (this.filters.SortBy === 'Name') {
+          //       return a.name.toLowerCase() < b.name.toLowerCase() ? -1: 1;
+          //   } else if (this.filters.SortBy === 'Price') {
+          //       return a.price > b.price ? -1: 1;
+          //   }
           })
         }
-
         // Testing Array before connecting spring
     // this.foodItem = [{
     //         "id": 1,

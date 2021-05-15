@@ -13,16 +13,27 @@ import { FooditemService } from '../fooditem.service';
 export class CustomerFoodItemListComponent implements OnInit {
 
   foodItem: FoodItem[]
+
+  filters = {
+    keyword: ''
+  }
   
   constructor(private foodItemService: FooditemService) { }
 
   ngOnInit(): void {
     this.getFoodItems();
   }
-        private getFoodItems() {
+         getFoodItems() {
           this.foodItemService.getfooditemsList().subscribe(data => {
-            this.foodItem = data;
+            this.foodItem = this.filterCustomerFoodItems(data);
           })
         }
+        // fillter based on foodGroup
+        filterCustomerFoodItems(foodItem: FoodItem[]) {
+          return foodItem.filter((e) => {
+            return e.foodGroup.toLowerCase().includes(this.filters.keyword.toLowerCase());
+          })
+        }
+        
 
 }
