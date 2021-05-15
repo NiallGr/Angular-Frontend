@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule} from "@angular/common/http";
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +10,7 @@ import { CreateFooditemComponent } from './create-fooditem/create-fooditem.compo
 import { UpdateFooditemComponent } from './update-fooditem/update-fooditem.component';
 import { FooditemDetailsComponent } from './fooditem-details/fooditem-details.component';
 import { CustomerFoodItemListComponent } from './customer-food-item-list/customer-food-item-list.component';
+
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { CustomerFoodItemListComponent } from './customer-food-item-list/custome
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

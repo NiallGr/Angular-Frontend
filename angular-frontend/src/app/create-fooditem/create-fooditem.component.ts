@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FoodItem } from '../food-item';
 import { FooditemService } from '../fooditem.service';
 
+
 @Component({
   selector: 'app-create-fooditem',
   templateUrl: './create-fooditem.component.html',
@@ -11,6 +12,7 @@ import { FooditemService } from '../fooditem.service';
 export class CreateFooditemComponent implements OnInit {
 
     fooditem: FoodItem = new FoodItem();
+
   constructor(private foodItemService: FooditemService, private router: Router) { }
 
   ngOnInit(): void {

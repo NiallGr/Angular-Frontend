@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import {FoodItem} from '../food-item'
 import { FooditemService } from '../fooditem.service';
 
+
 @Component({
   selector: 'app-food-item-list',
   templateUrl: './food-item-list.component.html',
@@ -12,6 +13,8 @@ export class FoodItemListComponent implements OnInit {
 
 
     foodItem: FoodItem[]
+
+    
 
   constructor(private foodItemService: FooditemService, private router: Router) { }
 
@@ -28,6 +31,7 @@ export class FoodItemListComponent implements OnInit {
             this.foodItem = data;
           })
         }
+
 
         // Testing Array before connecting spring
     // this.foodItem = [{

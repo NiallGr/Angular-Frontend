@@ -11,18 +11,18 @@
     </p> -->
     <thead>
         <tr>
-            <th> Food Name </th>
-            <th> Food Group </th>
-            <th> Price </th>
+            <th scope="col"> Food Name </th>
+            <th scope="col"> Food Group </th>
+            <th scope="col"> Price </th>
             <!-- <th> Image </th> -->
-            <th> Actions </th>
+            <th scope="col"> Actions </th>
         </tr>
     </thead>
     <tbody>
                 <tr *ngFor = "let foodItem of foodItem">
-                            <td> {{ foodItem.name }} </td>
-                            <td> {{ foodItem.foodGroup }} </td>
-                            <td> {{ foodItem.price | currency:'USD':true }} </td>
+                            <td scope="col"> {{ foodItem.name }} </td>
+                            <td scope="col"> {{ foodItem.foodGroup }} </td>
+                            <td scope="col">  {{ foodItem.price | currency:'USD':true }} </td>
                             <!-- <td> {{ foodItem.imgUrl }} </td> -->
                             <td> 
                                 <button (click) ="updateFoodItem(foodItem.id)" class="btn btn-success" > Update </button>
