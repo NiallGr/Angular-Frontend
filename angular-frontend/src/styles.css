@@ -39,3 +39,9 @@
 #foodCategory {
     background-color: white;
 }
+/* ACTION BUTTONS */
+.ActionButtons {
+    float: right;
+    margin-left: 10px;
+
+}
