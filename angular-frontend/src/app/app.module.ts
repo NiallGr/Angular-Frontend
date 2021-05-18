@@ -11,6 +11,7 @@ import { CreateFooditemComponent } from './create-fooditem/create-fooditem.compo
 import { UpdateFooditemComponent } from './update-fooditem/update-fooditem.component';
 import { FooditemDetailsComponent } from './fooditem-details/fooditem-details.component';
 import { CustomerFoodItemListComponent } from './customer-food-item-list/customer-food-item-list.component';
+import { OktaAuthModule } from '@okta/okta-angular';
 
 
 
@@ -22,6 +23,7 @@ import { CustomerFoodItemListComponent } from './customer-food-item-list/custome
     UpdateFooditemComponent,
     FooditemDetailsComponent,
     CustomerFoodItemListComponent,
+
   
   ],
   imports: [
@@ -30,7 +32,8 @@ import { CustomerFoodItemListComponent } from './customer-food-item-list/custome
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    OktaAuthModule
     
   ],
   providers: [],
