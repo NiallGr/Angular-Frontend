@@ -12,6 +12,7 @@ import { UpdateFooditemComponent } from './update-fooditem/update-fooditem.compo
 import { FooditemDetailsComponent } from './fooditem-details/fooditem-details.component';
 import { CustomerFoodItemListComponent } from './customer-food-item-list/customer-food-item-list.component';
 import { OktaAuthModule } from '@okta/okta-angular';
+import { CartStatusComponent } from './cart-status/cart-status.component';
 
 
 
@@ -23,6 +24,7 @@ import { OktaAuthModule } from '@okta/okta-angular';
     UpdateFooditemComponent,
     FooditemDetailsComponent,
     CustomerFoodItemListComponent,
+    CartStatusComponent,
 
   
   ],

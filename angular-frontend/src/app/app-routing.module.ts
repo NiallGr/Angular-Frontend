@@ -13,7 +13,7 @@ const routes: Routes = [
   {path: 'update-fooditem/:id', component: UpdateFooditemComponent},
   {path: 'fooditem-details/:id', component: FooditemDetailsComponent},
   {path: 'products', component: CustomerFoodItemListComponent},
-  {path: '', redirectTo: "products", pathMatch: 'full'},
+  // {path: '', redirectTo: "products", pathMatch: 'full'},
   
 ];
 

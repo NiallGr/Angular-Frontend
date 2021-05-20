@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CartItem } from '../cart-item';
+import { CartServiceService } from '../cart-service.service';
 import {FoodItem} from '../food-item'
 import { FooditemService } from '../fooditem.service';
 
@@ -18,7 +20,8 @@ export class CustomerFoodItemListComponent implements OnInit {
     keyword: ''
   }
   
-  constructor(private foodItemService: FooditemService) { }
+  constructor(private foodItemService: FooditemService,
+    private cartService: CartServiceService) { }
 
   ngOnInit(): void {
     this.getFoodItems();
@@ -35,5 +38,12 @@ export class CustomerFoodItemListComponent implements OnInit {
           })
         }
         
+        addToCart(fooditem: FoodItem) {
+            console.log(`Adding to cart: ${fooditem.name} ${fooditem.price}`);
 
+          const TheCartItem = new CartItem(fooditem);
+          
+            this.cartService.addToCart(TheCartItem);
+          
+        }
 }

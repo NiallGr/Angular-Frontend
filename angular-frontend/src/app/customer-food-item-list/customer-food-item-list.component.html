@@ -21,7 +21,7 @@
                         <div class="card-body">
                             <h5 class="card-title">{{foodItem.name}}</h5>
                             <p class="card-text">{{foodItem.price | currency:'USD':true}}</p>
-                            <p class="btn btn-success">Buy</p>
+                            <button (click)="addToCart(foodItem)" class="btn btn-success ">Add to Cart</button> 
                         </div>
                     </div>
                 </div> 
