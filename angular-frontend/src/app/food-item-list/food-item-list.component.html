@@ -11,11 +11,11 @@
     </p> -->
     <thead>
         <tr>
-            <th scope="col"> Food Name </th>
-            <th scope="col"> Food Group </th>
-            <th scope="col"> Price </th>
-            <!-- <th> Image </th> -->
-            <th scope="col" style="margin-left: 100%;"> Actions </th>
+            <th width="20%"> Food Name </th>
+            <th width="20%"> Food Group </th>
+            <th width="20%"> Price </th>
+            <th width="20%"> Image </th>
+            <th width="20%" style="margin-left: 100%;"> Actions </th>
         </tr>
     </thead>
     <tbody>
@@ -23,6 +23,7 @@
                             <td scope="col"> {{ foodItem.name }} </td>
                             <td scope="col"> {{ foodItem.foodGroup }} </td>
                             <td scope="col">  {{ foodItem.price | currency:'USD':true }} </td>
+                            <td><img src="{{foodItem.imgUrl}}" class="img-responsive" height="30px" width="40px"></td> 
                             <!-- <td> {{ foodItem.imgUrl }} </td> -->
                             <td> 
                                 <button (click) ="updateFoodItem(foodItem.id)" class="ActionButtons btn btn-success" > Update </button>
