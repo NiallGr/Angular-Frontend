@@ -5,5 +5,6 @@ export class FoodItem {
     foodGroup: string;
     price: number;
     imgUrl: string;
+  static price: any;
     
 }

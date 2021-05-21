@@ -1,0 +1,9 @@
+/* NAV BAR SHOPPING CART STYLE */
+.total {
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+    padding: 2px 6px;
+    /* font-weight: 500; */
+
+}
