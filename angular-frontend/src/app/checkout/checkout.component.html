@@ -162,8 +162,11 @@
                     <div class="col-3"> <label>Card Type</label></div>
                     <div class="col-md-9">
                         <div class="input-space">
-                            <input formControlName="cardType" type="text">
-                        </div>
+                            <select formControlName="cardType">
+                               <option>Visa</option>
+                               <option>MasterCard</option>
+                           </select>
+                       </div>
                     </div>
                 </div>
 
@@ -197,20 +200,33 @@
                 <div class="row">
                     <div class="col-3"> <label>Expiration month</label></div>
                     <div class="col-md-9">
-                        <div class="input-space">
-                            <input formControlName="expirationMonth" type="text">
-                        </div>
+                        <select formControlName="expirationMonth">
+                            <option *ngFor="let month of creditCardMonths">
+                                {{ month }}
+                            </option>
+                        </select>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-3"> <label>Expiration year</label></div>
                     <div class="col-md-9">
-                        <div class="input-space">
-                            <input formControlName="expirationYear" type="text">
-                        </div>
+                        <select formControlName="expirationYear" (change)="handleMonthsAndYears()">
+                            <option *ngFor="let year of creditCardYears">
+                                {{ year }}
+                            </option>            
+                        </select>
                     </div>
                 </div>
+        </div>
+
+        <!--  order Details -->
+        <div class="">
+            <h3>Review Order</h3>
+
+            <p> Total Quantity: {{ totalQuantity }}</p>
+            <p> Shipping: Free</p>
+            <p> Total Price: {{ totalPrice | currency: 'USD' }}</p>
         </div>
         <!-- submit button  -->
         <div class="text-center mt-3">
