@@ -13,9 +13,9 @@
                         <div class="input-space">
                             <input formControlName="firstName" type="text">
 
-                            <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="alert alert-danger mt-1">
+                            <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="">
 
-                                <div *ngIf="firstName.errors.required">
+                                <div *ngIf="firstName.errors.required || firstName.errors.notOnlyWhiteSpace">
                                     First Name is required
                                 </div>
 
@@ -33,9 +33,9 @@
                     <div class="col-md-9">
                         <div class="input-space">
                             <input formControlName="lastName" type="text">
-                            <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="alert alert-danger mt-1">
+                            <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="">
 
-                                <div *ngIf="lastName.errors.required">
+                                <div *ngIf="lastName.errors.required || lastName.errors.notOnlyWhiteSpace">
                                     Last Name is required
                                 </div>
 
@@ -52,8 +52,8 @@
                     <div class="col-3"> <label>Email</label></div>
                     <div class="col-md-9">
                         <div class="input-space">
-                            <input formControlName="email" type="text">
-                            <div *ngIf="email.invalid && (email.dirty || firstName.touched)" class="alert alert-danger mt-1">
+                            <input formControlName="email" type="text" placeholder="">
+                            <div *ngIf="email.invalid && (email.dirty || firstName.touched)" class="">
 
                                 <div *ngIf="email.errors.required">
                                     First Name is required
@@ -79,6 +79,14 @@
                     <div class="col-md-9">
                         <div class="input-space">
                             <input formControlName="country" type="text">
+                            <div *ngIf="shippingAddresscountry.invalid && (shippingAddresscountry.dirty || shippingAddresscountry.touched)" class="">
+
+                                <div *ngIf="shippingAddresscountry.errors.required">
+                                    Country is required
+                                </div>
+
+
+                            </div>      
                         </div>
                     </div>
                 </div>
@@ -88,6 +96,12 @@
                     <div class="col-md-9">
                         <div class="input-space">
                             <input formControlName="street" type="text">
+                            <div *ngIf="shippingAddressstreet.invalid && (shippingAddressstreet.dirty || shippingAddressstreet.touched)" class="">
+
+                                <div *ngIf="shippingAddressstreet.errors.required || lastName.errors.notOnlyWhiteSpace">
+                                    Street is required
+                                </div>
+                            </div> 
                         </div>
                     </div>
                 </div>
@@ -97,6 +111,13 @@
                     <div class="col-md-9">
                         <div class="input-space">
                             <input formControlName="city" type="text">
+                            <div *ngIf="shippingAddresscity.invalid && (shippingAddresscity.dirty || shippingAddresscity.touched)" class="">
+
+                                <div *ngIf="shippingAddresscity.errors.required || lastName.errors.notOnlyWhiteSpace">
+                                    City is required
+                                </div>
+
+                            </div> 
                         </div>
                     </div>
                 </div>
@@ -106,6 +127,15 @@
                     <div class="col-md-9">
                         <div class="input-space">
                             <input formControlName="state" type="text">
+                            <div *ngIf="shippingAddressstate.invalid && (shippingAddressstate.dirty || shippingAddressstate.touched)" class="">
+
+                                <div *ngIf="shippingAddressstate.errors.required || lastName.errors.notOnlyWhiteSpace">
+                                    State is required
+                                </div>
+
+                            
+
+                            </div> 
                         </div>
                     </div>
                 </div>
@@ -116,6 +146,14 @@
                     <div class="col-md-9">
                         <div class="input-space">
                             <input formControlName="zipCode" type="text">
+                            <div *ngIf="shippingAddresszipCode.invalid && (shippingAddresszipCode.dirty || shippingAddresszipCode.touched)" class="">
+
+                                <div *ngIf="shippingAddresszipCode.errors.required || lastName.errors.notOnlyWhiteSpace">
+                                    ZipCode is required
+                                </div>
+
+
+                            </div> 
                         </div>
                     </div>
                 </div>
@@ -140,6 +178,12 @@
                     <div class="col-md-9">
                         <div class="input-space">
                             <input formControlName="country" type="text">
+                            <div *ngIf="billingAddresscountry.invalid && (billingAddresscountry.dirty || billingAddresscountry.touched)" class="">
+
+                                <div *ngIf="billingAddresscountry.errors.required || lastName.errors.notOnlyWhiteSpace">
+                                    Country is required
+                                </div>
+                            </div> 
                         </div>
                     </div>
                 </div>
@@ -149,6 +193,13 @@
                     <div class="col-md-9">
                         <div class="input-space">
                             <input formControlName="street" type="text">
+                            <div *ngIf="billingAddressstreet.invalid && (billingAddressstreet.dirty || billingAddressstreet.touched)" class="">
+
+                                <div *ngIf="billingAddressstreet.errors.required || lastName.errors.notOnlyWhiteSpace">
+                                    Street is required
+                                </div>
+
+                            </div> 
                         </div>
                     </div>
                 </div>
@@ -159,6 +210,13 @@
                     <div class="col-md-9">
                         <div class="input-space">
                             <input formControlName="city" type="text">
+                            <div *ngIf="billingAddresscity.invalid && (billingAddresscity.dirty || billingAddresscity.touched)" class="">
+
+                                <div *ngIf="billingAddresscity.errors.required || lastName.errors.notOnlyWhiteSpace">
+                                    City is required
+                                </div>
+
+                            </div> 
                         </div>
                     </div>
                 </div>
@@ -168,6 +226,13 @@
                     <div class="col-md-9">
                         <div class="input-space">
                             <input formControlName="state" type="text">
+                            <div *ngIf="billingAddressstate.invalid && (billingAddressstate.dirty || billingAddressstate.touched)" class="">
+
+                                <div *ngIf="billingAddressstate.errors.required || lastName.errors.notOnlyWhiteSpace">
+                                    State is required
+                                </div>
+
+                            </div> 
                         </div>
                     </div>
                 </div>
@@ -178,6 +243,14 @@
                     <div class="col-md-9">
                         <div class="input-space">
                             <input formControlName="zipCode" type="text">
+                            <div *ngIf="billingAddresszipCode.invalid && (billingAddresszipCode.dirty || billingAddresszipCode.touched)" class="">
+
+                                <div *ngIf="billingAddresszipCode.errors.required || lastName.errors.notOnlyWhiteSpace">
+                                    ZipCode is required
+                                </div>
+
+
+                            </div> 
                         </div>
                     </div>
                 </div>
