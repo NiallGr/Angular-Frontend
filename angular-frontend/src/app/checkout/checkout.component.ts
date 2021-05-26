@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { CheckoutFormService } from '../checkout-form.service';
 
 @Component({
@@ -27,9 +27,9 @@ export class CheckoutComponent implements OnInit {
         // Form Builder assigning Values 
     this.checkoutFormGroup = this.formBuilder.group({
         customer: this.formBuilder.group({
-          firstName: [''],
-          lastName: [''],
-          email: ['']
+          firstName:  new FormControl('',[Validators.required, Validators.minLength(2)]),
+          lastName: new FormControl('',[Validators.required, Validators.minLength(2)]),
+          email: new FormControl('',[Validators.required, Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')])
         }),
         shippingAddress: this.formBuilder.group({
           street: [''],
@@ -70,11 +70,15 @@ export class CheckoutComponent implements OnInit {
           console.log("Retreaved Credit card year" + JSON.stringify(data));
           this.creditCardYears = data;  
         }
-      )
-  
-      
+      ) 
 
   }
+      // getter methods 
+  get firstName() {return this.checkoutFormGroup.get('customer.firstName');}
+  get lastName() {return this.checkoutFormGroup.get('customer.lastName');}
+  get email() {return this.checkoutFormGroup.get('customer.email');}
+
+
           // Copy Shipping Address to Billing Address
       copyShippingAddressToBillingAddress(event) {
           if (event.target.checked) {
@@ -86,8 +90,12 @@ export class CheckoutComponent implements OnInit {
           }
         }
     onSubmit() {
-      // testing Purpose
+      // Check for invalied fields 
       console.log("handling the submit button")
+      if(this.checkoutFormGroup.invalid) {
+        this.checkoutFormGroup.markAllAsTouched();
+      }
+            // testing Purpose
       console.log(this.checkoutFormGroup.get('customer').value)
       console.log(this.checkoutFormGroup.get('shippingAddress').value)
       console.log(this.checkoutFormGroup.get('billingAddress').value)
