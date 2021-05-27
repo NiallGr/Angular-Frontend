@@ -1,6 +1,6 @@
 <div class="row">
     
-    <div class="col-3">
+    <div class="col-2">
         <select type="text" class="form-control" [(ngModel)]="filters.keyword" (input)="getFoodItems()" id = "foodCategory" name = "foodGroup">
             <option value="">All</option>
             <option value="Fruit">Fruit</option>
@@ -11,7 +11,7 @@
     </select>
     </div>
 
-    <div class="col-9">
+    <div class="col-10">
         <!-- RIGHT COLUMN -->
         <div class="row">
             <ng-container *ngFor="let foodItem of foodItem; let i = index">
@@ -21,7 +21,7 @@
                         <div class="card-body">
                             <h5 class="card-title">{{foodItem.name}}</h5>
                             <p class="card-text">{{foodItem.price | currency:'USD':true}}</p>
-                            <button (click)="addToCart(foodItem)" class="btn btn-success ">Add to Cart</button> 
+                            <a (click)="addToCart(foodItem)" class="btn btn-success ">Add to Cart</a> 
                         </div>
                     </div>
                 </div> 

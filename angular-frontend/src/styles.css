@@ -33,6 +33,7 @@
     0 2px 2px rgba(0,0,0,0.15), 
     0 4px 4px rgba(0,0,0,0.15), 
     0 8px 8px rgba(0,0,0,0.15);
+    transform: scale(1.02); 
 }
 
 /* FOODCATEGORY DROPDOWN  */
@@ -44,4 +45,12 @@
     float: right;
     margin-left: 10px;
 
+}
+/* CHECK OUT CART VALIDATOR WARNINGS TEXT */
+.validatorText {
+    color: red;
+}
+/* SHOPPING CART - NAVBAR  */
+.ShoppingCartNavBar {
+    margin-left: 60%;
 }
