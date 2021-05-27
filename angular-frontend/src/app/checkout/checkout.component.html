@@ -2,7 +2,7 @@
 <form [formGroup]="checkoutFormGroup" (ngSubmit)="onSubmit()">
 
     <div class="row">
-        <div class="col-6">
+        <div class="col-5">
         <!-- Customer form group  -->
         <div formGroupName="customer" class="form-area">
                 <h3> Customer</h3> 
@@ -168,7 +168,7 @@
         </div>
     </div>
 
-    <div class="col-6">
+    <div class="col-5">
                <!-- BILLING ADDRESS  -->          
                <div formGroupName="billingAddress" class="form-area">
                 <h3> Billing Address </h3> 
@@ -267,6 +267,13 @@
                                <option>Visa</option>
                                <option>MasterCard</option>
                            </select>
+                           <div *ngIf="creditCardType.invalid && (creditCardType.dirty || creditCardType.touched)" class="">
+
+                            <div *ngIf="creditCardType.errors.required">
+                                Credit Card is required
+                            </div>
+
+                        </div> 
                            
                        </div>
                     </div>
@@ -278,6 +285,13 @@
                         <div class="input-space">
                             <input formControlName="nameOnCard" type="text">
                         </div>
+                        <div *ngIf="creditCardNameOnCard.invalid && (creditCardNameOnCard.dirty || creditCardNameOnCard.touched)" class="">
+
+                            <div *ngIf="creditCardNameOnCard.errors.required || creditCardNameOnCard.errors.notOnlyWhiteSpace">
+                                Credit Card name is required
+                            </div>
+
+                        </div> 
                     </div>
                 </div>
 
@@ -287,6 +301,13 @@
                         <div class="input-space">
                             <input formControlName="CardNumber" type="text">
                         </div>
+                        <div *ngIf="creditCardNumber.invalid && (creditCardNumber.dirty || creditCardNumber.touched)" class="">
+
+                            <div *ngIf="creditCardNumber.errors.required || creditCardNumber.errors.pattern">
+                                Must be 16 numbers in lenght
+                            </div>
+
+                        </div> 
                     </div>
                 </div>
 
@@ -296,6 +317,13 @@
                         <div class="input-space">
                             <input formControlName="securityCode" type="text">
                         </div>
+                        <div *ngIf="creditCardSecurityCode.invalid && (creditCardSecurityCode.dirty || creditCardSecurityCode.touched)" class="">
+
+                            <div *ngIf="creditCardSecurityCode.errors.required || creditCardSecurityCode.errors.pattern">
+                                Must be 3 numbers in lenght
+                            </div>
+
+                        </div> 
                     </div>
                 </div>
 
@@ -321,9 +349,9 @@
                     </div>
                 </div>
         </div>
-
+</div>
         <!--  order Details -->
-        <div class="">
+        <div class="col-2">
             <h3>Review Order</h3>
 
             <p> Total Quantity: {{ totalQuantity }}</p>
@@ -335,7 +363,7 @@
             <button type="submit"  class="btn btn-success">Purchase</button>
         </div>
     </div>
-</div>
+
 </form>
 
 </div>
