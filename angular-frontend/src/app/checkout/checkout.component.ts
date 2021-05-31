@@ -1,8 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { CartServiceService } from '../cart-service.service';
 import { CheckoutFormService } from '../checkout-form.service';
 import { CheckoutValidators } from '../checkout-validators';
+import { CheckoutService } from '../checkout.service';
+import { Order } from '../common/order';
+import { OrderItem } from '../common/order-item';
+import { Purchase } from '../common/purchase';
 
 @Component({
   selector: 'app-checkout',
@@ -19,12 +24,13 @@ export class CheckoutComponent implements OnInit {
     creditCardYears: number[] = [];
     creditCardMonths: number[] = [];
 
-  
 
 
   constructor(private formBuilder: FormBuilder,
      private checkoutFormMonthAndYear: CheckoutFormService,
-     private chartService: CartServiceService) { }
+     private chartService: CartServiceService,
+     private checkoutService: CheckoutService,
+     private router: Router) { }
 
   ngOnInit(): void {
 
@@ -127,11 +133,13 @@ export class CheckoutComponent implements OnInit {
             this.checkoutFormGroup.controls.billingAddress.reset();
           }
         }
+        
     onSubmit() {
       // Check for invalied fields 
       console.log("handling the submit button")
       if(this.checkoutFormGroup.invalid) {
         this.checkoutFormGroup.markAllAsTouched();
+        return;
       }
             // testing Purpose
       console.log(this.checkoutFormGroup.get('customer').value)
@@ -139,6 +147,63 @@ export class CheckoutComponent implements OnInit {
       console.log(this.checkoutFormGroup.get('billingAddress').value)
       console.log(this.checkoutFormGroup.get('creditCard').value)
 
+
+       // set up order
+       let order = new Order();
+       order.totalPrice = this.totalPrice;
+       order.totalQuantity = this.totalQuantity;
+   
+       // get cart items
+       const cartItems = this.chartService.cartItems;
+   
+       // create orderItems from cartItem
+      
+       let orderItems: OrderItem[] = cartItems.map(tempCartItem => new OrderItem(tempCartItem));
+   
+       // set up purchase
+       let purchase = new Purchase();
+       
+       // populate purchase - customer
+       purchase.customer = this.checkoutFormGroup.controls['customer'].value;
+       
+      //  populate purchase - shipping address
+       purchase.shippingAddress = this.checkoutFormGroup.controls['shippingAddress'].value;
+  
+   
+      //  populate purchase - billing address
+       purchase.billingAddress = this.checkoutFormGroup.controls['billingAddress'].value;
+     
+       // populate purchase - order and orderItems
+       purchase.order = order;
+       purchase.orderItems = orderItems;
+
+   
+       // call REST API via the CheckoutService
+       this.checkoutService.placeOrder(purchase).subscribe({
+           next: response => {
+             alert(`Your order has been received.\nOrder tracking number: ${response.orderTrackingNumber}`);
+   
+             // reset cart
+             this.resetCart();
+   
+           },
+           error: err => {
+             alert(`There was an error: ${err.message}`);
+           }
+         }
+       );
+    }
+    resetCart() {
+      // reset cart data
+      this.chartService.cartItems = [];
+      this.chartService.totalPrice.next(0);
+      this.chartService.totalQuantity.next(0);
+      
+      // reset the form
+      this.checkoutFormGroup.reset();
+  
+      // navigate back to the products page
+      this.router.navigateByUrl("/products");
     }
 
         // Make the next year, month start from 1
