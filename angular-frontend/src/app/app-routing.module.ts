@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Router, RouterModule, Routes } from '@angular/router';
 import { CartDetailsComponent } from './cart-details/cart-details.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { CreateFooditemComponent } from './create-fooditem/create-fooditem.component';
@@ -8,7 +8,10 @@ import { FoodItemListComponent } from './food-item-list/food-item-list.component
 import { FooditemDetailsComponent } from './fooditem-details/fooditem-details.component';
 import { UpdateFooditemComponent } from './update-fooditem/update-fooditem.component';
 
+
+
 const routes: Routes = [
+
   {path: 'fooditems', component: FoodItemListComponent},
   {path: 'create-fooditem', component: CreateFooditemComponent},
   
