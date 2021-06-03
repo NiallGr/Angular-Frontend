@@ -15,6 +15,8 @@ import { OktaAuthModule } from '@okta/okta-angular';
 import { CartStatusComponent } from './cart-status/cart-status.component';
 import { CartDetailsComponent } from './cart-details/cart-details.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { LoginComponent } from './login/login.component';
+import { LoginStatusComponent } from './login-status/login-status.component';
 
 
 
@@ -29,6 +31,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
     CartStatusComponent,
     CartDetailsComponent,
     CheckoutComponent,
+    LoginComponent,
+    LoginStatusComponent,
 
   
   ],
