@@ -1,5 +1,6 @@
 <div class="login-status-header" >
-
+    <!-- <a  *ngIf="isAuthenticated" routerLink="create-fooditem" routerLinkActive="active" class="nav-link"> Add food Item </a>
+    <a  *ngIf="isAuthenticated"  routerLink="fooditems" routerLinkActive="active" class="nav-link"> Food Items List </a> -->
     <div *ngIf="isAuthenticated && userFullName" class="login-status-user-info">
         Welcome back {{ userFullName }}!
     </div>
@@ -7,5 +8,8 @@
     <button *ngIf="!isAuthenticated" routerLink="/login" class="security-btn">Login</button>
 
     <button *ngIf="isAuthenticated" (click)="logout()" class="security-btn">Logout</button>
+    
+
+    
 
 </div>
