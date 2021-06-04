@@ -14,8 +14,23 @@ export class CartServiceService {
   totalPrice: Subject<number> = new BehaviorSubject<number>(0);
   totalQuantity: Subject<number> = new BehaviorSubject<number>(0);
 
-  constructor() { }
+  // Session store to stop item removing after brower refresh
+  storage: Storage = localStorage;
 
+  constructor() { 
+      // Read data from storage 
+    let data = JSON.parse(this.storage.getItem('cartItems'));
+  
+      // compute totals based on the data that is read from storage 
+  if (data != null) {
+    this.cartItems = data;
+
+      // compute totals based on the data that is read from storage
+    this.computeCartTotals();
+  }
+
+
+}
   addToCart(theCartItem: CartItem) {
 
     // check if there is item in cart
@@ -59,7 +74,14 @@ export class CartServiceService {
 
     // log cart data Debugging (Console line)
     this.logCartData(totalPriceValue, totalQuantityValue);
+
+    // Perist(store) cart data
+    this.persistCardItems();
   }
+    // cart item into Json String
+    persistCardItems() {
+      this.storage.setItem('cartItems', JSON.stringify(this.cartItems));
+    }
 
   logCartData(totalPriceValue: number, totalQuantityValue: number) {
 
