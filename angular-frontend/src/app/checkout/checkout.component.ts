@@ -181,7 +181,7 @@ export class CheckoutComponent implements OnInit {
        // call REST API via the CheckoutService
        this.checkoutService.placeOrder(purchase).subscribe({
            next: response => {
-             alert(`Your order has been received.\nOrder tracking number: ${response.orderTrackingNumber}`);
+             alert(`Thank you for your purchase.\nYour order has been received.\nOrder tracking number: ${response.orderTrackingNumber}`);
    
              // reset cart
              this.resetCart();

@@ -13,7 +13,8 @@ import { UpdateFooditemComponent } from './update-fooditem/update-fooditem.compo
 import {
   OKTA_CONFIG,
   OktaAuthModule,
-  OktaCallbackComponent
+  OktaCallbackComponent,
+  OktaAuthGuard
 } from '@okta/okta-angular';
 
 import myAppConfig from './config/my-app-config';
@@ -32,15 +33,16 @@ const routes: Routes = [
   {path: 'login/callback', component: OktaCallbackComponent},
   {path: 'login', component: LoginComponent},
 
-  {path: 'fooditems', component: FoodItemListComponent},
-  {path: 'create-fooditem', component: CreateFooditemComponent},
+  {path: 'fooditems', component: FoodItemListComponent, canActivate: [ OktaAuthGuard]},
+  {path: 'create-fooditem', component: CreateFooditemComponent, canActivate: [ OktaAuthGuard]},
   
-  {path: 'update-fooditem/:id', component: UpdateFooditemComponent},
+  {path: 'update-fooditem/:id', component: UpdateFooditemComponent, canActivate: [ OktaAuthGuard]},
   {path: 'cart-details', component: CartDetailsComponent},
   {path: 'checkout', component: CheckoutComponent},
-  {path: 'fooditem-details/:id', component: FooditemDetailsComponent},
+  {path: 'fooditem-details/:id', component: FooditemDetailsComponent, canActivate: [ OktaAuthGuard]},
   {path: 'products', component: CustomerFoodItemListComponent},
-  {path: '', redirectTo: "products", pathMatch: 'full'},
+  {path: '', redirectTo: "/products", pathMatch: 'full'},
+  {path: '**', redirectTo: "/products", pathMatch: 'full'},
   
 ];
 

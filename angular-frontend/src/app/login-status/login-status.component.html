@@ -1,13 +1,38 @@
-<div class="login-status-header" >
-    <!-- <a  *ngIf="isAuthenticated" routerLink="create-fooditem" routerLinkActive="active" class="nav-link"> Add food Item </a>
-    <a  *ngIf="isAuthenticated"  routerLink="fooditems" routerLinkActive="active" class="nav-link"> Food Items List </a> -->
-    <div *ngIf="isAuthenticated && userFullName" class="login-status-user-info">
-        Welcome back {{ userFullName }}!
+<div class="" >
+        <div c *ngIf="!isAuthenticated"> 
+                <app-cart-status></app-cart-status>
+        </div>
+        
+    
+    <div class="row" style="text-align: center;">
+        <div class="col-2 AdminNavBar">
+            <span *ngIf="isAuthenticated">Adminstration </span>
+        </div>
+        <!-- Food Item lists -->
+        <div class="col-2 AdminNavBar">
+             <a *ngIf="isAuthenticated" class="AdminNavBar" routerLink="fooditems" routerLinkActive="active" > Food Items List </a>
+            </div>
+
+        <!-- Add Food Item -->
+        <div class="col-2 AdminNavBar">
+            <a  *ngIf="isAuthenticated" class="AdminNavBar" routerLink="create-fooditem" routerLinkActive="active"> Add food Item </a>
+        </div>
+
+        <!-- User Name -->
+        <div class="col-4">
+           <div class="AdminNavBar" *ngIf="isAuthenticated && userFullName"> Welcome back <b>{{ userFullName }}!</b></div> 
+      </div>
+          <!-- Login & Logout -->
+        <div class="col-2"> 
+            <!-- <button class="loginlogoutBTN" *ngIf="!isAuthenticated" routerLink="/login" >Login</button> -->
+            <button class="loginlogoutBTN" *ngIf="isAuthenticated" (click)="logout()" >Logout</button> 
+        </div>
     </div>
+  
+   
+    
 
-    <button *ngIf="!isAuthenticated" routerLink="/login" class="security-btn">Login</button>
-
-    <button *ngIf="isAuthenticated" (click)="logout()" class="security-btn">Logout</button>
+    
     
 
     

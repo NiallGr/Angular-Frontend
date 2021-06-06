@@ -18,7 +18,8 @@ export class LoginComponent implements OnInit {
     this.oktaSignin = new OktaSignIn({
       logo: "",
       features: {
-        registration: true
+        // Lets admin register
+        // registration: true
       },
       baseUrl: myAppConfig.oidc.issuer.split('/oauth2')[0],
       clientId: myAppConfig.oidc.clientId,
@@ -40,6 +41,7 @@ export class LoginComponent implements OnInit {
       (response) => {
         if (response.status === 'SUCCESS') {
           this.oktaAuthService.signInWithRedirect();
+    
         }
       },
       (error) => {
