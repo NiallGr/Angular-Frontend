@@ -1,4 +1,4 @@
-import { FoodItem } from "./food-item";
+import { FoodItem } from "../common/food-item";
 
 export class CartItem  {
 

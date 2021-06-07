@@ -1,0 +1,15 @@
+.remove {
+    background-color: #f5be18;
+}
+.remove:hover {
+    border-radius: 2pt;
+    background-color: #daa405;
+}
+
+.checkout {
+    background-color: #198754;
+}
+.checkout:hover {
+    
+    background-color: #006435;
+}

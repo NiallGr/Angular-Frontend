@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CartItem } from '../cart-item';
-import { CartServiceService } from '../cart-service.service';
-import {FoodItem} from '../food-item'
-import { FooditemService } from '../fooditem.service';
+import { CartItem } from '../service/cart-item';
+import { CartServiceService } from '../service/cart-service.service';
+import {FoodItem} from '../common/food-item'
+import { FooditemService } from '../service/fooditem.service';
 
 
 

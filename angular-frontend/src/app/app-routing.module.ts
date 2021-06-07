@@ -18,7 +18,7 @@ import {
 } from '@okta/okta-angular';
 
 import myAppConfig from './config/my-app-config';
-import { FooditemService } from './fooditem.service';
+import { FooditemService } from './service/fooditem.service';
 
 const oktaConfig = Object.assign({
   onAuthRequired: (injector) => {

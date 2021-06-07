@@ -1,4 +1,4 @@
-import { CartItem } from "../cart-item";
+import { CartItem } from "../service/cart-item";
 
 export class OrderItem {
     imageUrl: string;

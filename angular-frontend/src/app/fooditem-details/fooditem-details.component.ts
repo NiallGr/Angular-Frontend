@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { from } from 'rxjs';
-import { FoodItem } from '../food-item';
-import { FooditemService } from '../fooditem.service';
+import { FoodItem } from '../common/food-item';
+import { FooditemService } from '../service/fooditem.service';
 import { RouterModule} from '@angular/router'
 
 @Component({

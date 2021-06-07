@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FoodItem } from '../food-item';
-import { FooditemService } from '../fooditem.service';
+import { FoodItem } from '../common/food-item';
+import { FooditemService } from '../service/fooditem.service';
 
 @Component({
   selector: 'app-update-fooditem',

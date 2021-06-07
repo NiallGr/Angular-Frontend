@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CartServiceService } from '../cart-service.service';
-import { CheckoutFormService } from '../checkout-form.service';
-import { CheckoutValidators } from '../checkout-validators';
-import { CheckoutService } from '../checkout.service';
+import { CartServiceService } from '../service/cart-service.service';
+import { CheckoutFormService } from '../validations/checkout-form.service';
+import { CheckoutValidators } from '../validations/checkout-validators';
+import { CheckoutService } from '../service/checkout.service';
 import { Order } from '../common/order';
 import { OrderItem } from '../common/order-item';
 import { Purchase } from '../common/purchase';
