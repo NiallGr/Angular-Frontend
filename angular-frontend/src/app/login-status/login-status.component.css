@@ -1,5 +1,5 @@
 .row {
-    width: 800px; margin-left: 65%; text-align: center;
+    width: 800px; margin-left: 61%; text-align: center;
 }
 
 .AdminNavBar {
@@ -16,6 +16,6 @@
 
 @media screen and (min-width: 1630px) {
     .row {
-        width: 800px; margin-left: 110%; text-align: center;
+        width: 800px; margin-left: 108%; text-align: center;
     }
  }
