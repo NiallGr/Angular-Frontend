@@ -4,8 +4,7 @@ import { CartItem } from '../service/cart-item';
 import { CartServiceService } from '../service/cart-service.service';
 import {FoodItem} from '../common/food-item'
 import { FooditemService } from '../service/fooditem.service';
-
-
+import { OktaAuthService } from '@okta/okta-angular';
 
 @Component({
   selector: 'app-customer-food-item-list',
@@ -37,7 +36,7 @@ export class CustomerFoodItemListComponent implements OnInit {
             return e.foodGroup.toLowerCase().includes(this.filters.keyword.toLowerCase());
           })
         }
-        
+        // Add food item to cart! 
         addToCart(fooditem: FoodItem) {
             console.log(`Adding to cart: ${fooditem.name} ${fooditem.price}`);
 

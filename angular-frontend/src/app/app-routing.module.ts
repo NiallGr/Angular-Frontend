@@ -21,7 +21,7 @@ import myAppConfig from './config/my-app-config';
 import { FooditemService } from './service/fooditem.service';
 
 const oktaConfig = Object.assign({
-  onAuthRequired: (injector) => {
+  onAuthRequired: (oktaAuth, injector) => {
     const router = injector.get(Router);
 
     // Redirect the user to your custom login page
@@ -33,16 +33,16 @@ const routes: Routes = [
   {path: 'login/callback', component: OktaCallbackComponent},
   {path: 'login', component: LoginComponent},
 
-  {path: 'fooditems', component: FoodItemListComponent, canActivate: [ OktaAuthGuard]},
-  {path: 'create-fooditem', component: CreateFooditemComponent, canActivate: [ OktaAuthGuard]},
+  {path: 'fooditems', component: FoodItemListComponent, canActivate: [ OktaAuthGuard ]},
+  {path: 'create-fooditem', component: CreateFooditemComponent, canActivate: [ OktaAuthGuard ]},
   
-  {path: 'update-fooditem/:id', component: UpdateFooditemComponent, canActivate: [ OktaAuthGuard]},
+  {path: 'update-fooditem/:id', component: UpdateFooditemComponent, canActivate: [ OktaAuthGuard ]},
   {path: 'cart-details', component: CartDetailsComponent},
   {path: 'checkout', component: CheckoutComponent},
-  {path: 'fooditem-details/:id', component: FooditemDetailsComponent, canActivate: [ OktaAuthGuard]},
+  {path: 'fooditem-details/:id', component: FooditemDetailsComponent, canActivate: [ OktaAuthGuard ]},
   {path: 'products', component: CustomerFoodItemListComponent},
-  {path: '', redirectTo: "/products", pathMatch: 'full'},
-  {path: '**', redirectTo: "/products", pathMatch: 'full'},
+  {path: '', redirectTo: "products", pathMatch: 'full'},
+  {path: '**', redirectTo: "products", pathMatch: 'full'},
   
 ];
 
