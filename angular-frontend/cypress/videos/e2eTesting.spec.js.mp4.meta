@@ -1,0 +1,71 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=693
+END=4392
+title=Dinner2Door Restricted paths redirect
+[CHAPTER]
+TIMEBASE=1/1000
+START=3666
+END=8094
+title=Dinner2Door Login & Logout Success
+[CHAPTER]
+TIMEBASE=1/1000
+START=8996
+END=12524
+title=Dinner2Door  View Food Item Success & Return Success
+[CHAPTER]
+TIMEBASE=1/1000
+START=12280
+END=16055
+title=Dinner2Door  Update Food Item Success & Return Success
+[CHAPTER]
+TIMEBASE=1/1000
+START=15233
+END=19833
+title=Dinner2Door  Add Food Item Success
+[CHAPTER]
+TIMEBASE=1/1000
+START=20924
+END=24438
+title=Dinner2Door  Delete Food Item Success
+[CHAPTER]
+TIMEBASE=1/1000
+START=26731
+END=27955
+title=Dinner2Door  Add Item to Cart & Open Cart
+[CHAPTER]
+TIMEBASE=1/1000
+START=28575
+END=29181
+title=Dinner2Door Increment & Remove Items
+[CHAPTER]
+TIMEBASE=1/1000
+START=28884
+END=29789
+title=Dinner2Door Customer Information
+[CHAPTER]
+TIMEBASE=1/1000
+START=29292
+END=30696
+title=Dinner2Door Shipping Address
+[CHAPTER]
+TIMEBASE=1/1000
+START=31852
+END=32100
+title=Dinner2Door Shipping & Billing Addresss Are The Same
+[CHAPTER]
+TIMEBASE=1/1000
+START=30974
+END=32348
+title=Dinner2Door Billing Address
+[CHAPTER]
+TIMEBASE=1/1000
+START=32463
+END=33723
+title=Dinner2Door Billing Information
+[CHAPTER]
+TIMEBASE=1/1000
+START=34872
+END=34984
+title=Dinner2Door Purchase Success
