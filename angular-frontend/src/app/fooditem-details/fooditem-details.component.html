@@ -1,35 +1,34 @@
-
+<!-- Food Item Details -->
 <div class="col-md-10 offset-md-2">
-    
-<div class="row mt-3">
-<div class="col-md-6">
-    <h2> Food item details</h2>
-    <div style="font-size: 1.2rem;">
-        <div>
-            <label> <b>  Food Item </b> </label>: {{foodItem.name}}
-        </div>
-        <div>
-            <label> <b> Food Group </b> </label>: {{foodItem.foodGroup}}
-        </div>
-        <div>
-            <label> <b> Food Price </b> </label>: {{foodItem.price | currency:'USD':true}}
-        </div>
-        <!-- <div>
-            <label> <b> Food Img </b> </label>: {{ foodItem.imgUrl }}
-        </div> -->
 
-    </div>
-    
-</div>
-<div class="col-md-6">
-    <div class="card" style="width: 20rem;">
-        <img class="card-img-top" src="{{foodItem.imgUrl}}">
-        <div class="card-body">
-          <h5 class="card-title">{{foodItem.name}}</h5>
-          <p class="card-text">{{foodItem.price | currency:'USD':true}}</p>
+    <div class="row mt-3">
+        <!-- LEFT COLUMN -->
+        <div class="col-md-6">
+            <h2> Food item details</h2>
+            <div style="font-size: 1.2rem;">
+                <div>
+                    <label> <b> Food Item </b> </label>: {{foodItem.name}}
+                </div>
+                <div>
+                    <label> <b> Food Group </b> </label>: {{foodItem.foodGroup}}
+                </div>
+                <div>
+                    <label> <b> Food Price </b> </label>: {{foodItem.price | currency:'USD':true}}
+                </div>
+
+
+            </div>
+
         </div>
-      </div>
-</div>
-</div>
-<a class="btn btn-success" routerLink="/fooditems" routerLinkActive="active" id="return">Return<a>
-    
+        <div class="col-md-6">
+            <!-- RIGHT COLUMN -->
+            <div class="card" style="width: 20rem;">
+                <img class="card-img-top" src="{{foodItem.imgUrl}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{foodItem.name}}</h5>
+                    <p class="card-text">{{foodItem.price | currency:'USD':true}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="btn btn-success" routerLink="/fooditems" routerLinkActive="active" id="return">Return<a>

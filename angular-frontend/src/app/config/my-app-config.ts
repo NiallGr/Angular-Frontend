@@ -1,3 +1,4 @@
+// Configurations for OKTA *Should be populated with your own  OKTA credentials*
 export default {
 
     oidc: {

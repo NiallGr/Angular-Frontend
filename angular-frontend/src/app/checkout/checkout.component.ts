@@ -37,7 +37,7 @@ export class CheckoutComponent implements OnInit {
           this.reviewCartDetails();
 
 
-        // Form Builder assigning Values 
+        // Form Builder assigning Values , Validations 
     this.checkoutFormGroup = this.formBuilder.group({
         customer: this.formBuilder.group({
           firstName:  new FormControl('',[Validators.required, Validators.minLength(2), CheckoutValidators.notOnlyWhiteSpace]),
@@ -148,42 +148,43 @@ export class CheckoutComponent implements OnInit {
       console.log(this.checkoutFormGroup.get('creditCard').value)
 
 
-       // set up order
+       // Set up order
        let order = new Order();
        order.totalPrice = this.totalPrice;
        order.totalQuantity = this.totalQuantity;
    
-       // get cart items
+       // Get cart items
        const cartItems = this.chartService.cartItems;
    
-       // create orderItems from cartItem
+       // Create orderItems from cartItem
       
        let orderItems: OrderItem[] = cartItems.map(tempCartItem => new OrderItem(tempCartItem));
    
-       // set up purchase
+       // Set up purchase
        let purchase = new Purchase();
        
-       // populate purchase - customer
+       // Populate purchase - customer
        purchase.customer = this.checkoutFormGroup.controls['customer'].value;
        
-      //  populate purchase - shipping address
+      //  Populate purchase - shipping address
        purchase.shippingAddress = this.checkoutFormGroup.controls['shippingAddress'].value;
   
    
-      //  populate purchase - billing address
+      //  Populate purchase - billing address
        purchase.billingAddress = this.checkoutFormGroup.controls['billingAddress'].value;
      
-       // populate purchase - order and orderItems
+       // Populate purchase - order and orderItems
        purchase.order = order;
        purchase.orderItems = orderItems;
 
    
-       // call REST API via the CheckoutService
+       // Call REST API via the CheckoutService
        this.checkoutService.placeOrder(purchase).subscribe({
            next: response => {
+            //  alert customer of purchase, assign unique tracking number.
              alert(`Thank you for your purchase.\nYour order has been received.\nOrder tracking number: ${response.orderTrackingNumber}`);
    
-             // reset cart
+             // Reset cart
              this.resetCart();
    
            },
@@ -214,7 +215,7 @@ export class CheckoutComponent implements OnInit {
           const currentYear: number = new Date().getFullYear();
           const selectedYear: number = Number(creditCardFormGroup.value.expirationYear);
       
-          // if the current year equals the selected year, then start with the current month
+          // if the current year equals the selected year then start with the current month
       
           let startMonth: number;
       

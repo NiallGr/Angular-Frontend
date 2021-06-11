@@ -11,7 +11,7 @@ export class CheckoutValidators {
             // invalid, return error object
             return { 'notOnlyWhiteSpace': true}
         }
-            // everything is ok
+           
             else {
                  return null;
             }

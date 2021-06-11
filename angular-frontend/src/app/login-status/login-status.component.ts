@@ -9,7 +9,7 @@ import { OktaAuthService } from '@okta/okta-angular';
 export class LoginStatusComponent implements OnInit {
 
   isAuthenticated: boolean = false;
-  userFullName: string; 
+  userFullName: string;
 
   constructor(private oktaAuthService: OktaAuthService) { }
 
@@ -22,14 +22,14 @@ export class LoginStatusComponent implements OnInit {
         this.getUserDetails();
       }
     );
-    
+
   }
 
   getUserDetails() {
     if (this.isAuthenticated) {
 
-    
-      // user full name is exposed as a property name
+
+      // user name is exposed as a property name
       this.oktaAuthService.getUser().then(
         (res) => {
           this.userFullName = res.name;

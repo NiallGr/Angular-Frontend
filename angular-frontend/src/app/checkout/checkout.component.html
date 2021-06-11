@@ -78,7 +78,7 @@
                     <div class="col-3"> <label>Country</label></div>
                     <div class="col-md-9">
                         <div class="input-space">
-                            <input formControlName="country" type="text">
+                            <input formControlName="country" type="text" id="ShippingInfoCountry">
                             <div *ngIf="shippingAddresscountry.invalid && (shippingAddresscountry.dirty || shippingAddresscountry.touched)" class="">
 
                                 <div class="validatorText" *ngIf="shippingAddresscountry.errors.required">
@@ -361,7 +361,7 @@
         
         <!-- submit button  -->
         <div class="text-center mt-3">
-            <button type="submit"  class="btn btn-success">Purchase</button>
+            <button type="submit" id="PurchaseBtn" class="btn btn-success">Purchase</button>
         </div>
     </div>
 </div>

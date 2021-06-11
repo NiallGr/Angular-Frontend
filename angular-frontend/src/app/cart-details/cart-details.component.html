@@ -31,7 +31,7 @@
                                         </button>
                                     </div>
 
-                                    <div class="col ml-4 mr-2">
+                                    <div class="col ml-4 mr-2" id="TempCartQuanity">
                                         {{tempCartItem.quantity}}
                                     </div>
                                 
@@ -59,7 +59,7 @@
                     <P>Shipping: free</P>
                     <p>Pre tax Total Price: {{totalPrice | currency: 'USD'}}</p>
                     <p>Total Price + Tax:   {{totalPrice * 1.1 | currency: 'USD'}}</p>
-                    <a routerLink="/checkout" class="btn btn-success checkout">Checkout</a>
+                    <a routerLink="/checkout" class="btn btn-success checkout" id="CheckoutBtn">Checkout</a>
                     </td>
                 </tr>
 

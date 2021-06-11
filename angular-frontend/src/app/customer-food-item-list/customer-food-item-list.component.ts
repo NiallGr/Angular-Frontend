@@ -25,6 +25,7 @@ export class CustomerFoodItemListComponent implements OnInit {
   ngOnInit(): void {
     this.getFoodItems();
   }
+          // Get Food Items From The DataBase
          getFoodItems() {
           this.foodItemService.getfooditemsList().subscribe(data => {
             this.foodItem = this.filterCustomerFoodItems(data);
@@ -36,7 +37,7 @@ export class CustomerFoodItemListComponent implements OnInit {
             return e.foodGroup.toLowerCase().includes(this.filters.keyword.toLowerCase());
           })
         }
-        // Add food item to cart! 
+        // Add food item to cart
         addToCart(fooditem: FoodItem) {
             console.log(`Adding to cart: ${fooditem.name} ${fooditem.price}`);
 

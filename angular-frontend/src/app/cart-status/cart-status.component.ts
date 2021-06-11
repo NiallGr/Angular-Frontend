@@ -17,11 +17,13 @@ export class CartStatusComponent implements OnInit {
   ngOnInit(): void {
     this.updateCartStatus();
   }
+  // Update Cart
   updateCartStatus() {
+    // Total Price updated from subcirbed value 
     this.cartService.totalPrice.subscribe(
        data => this.totalPrice = data
     );
-
+// Total Price updated from subcirbed Quantity
     this.cartService.totalQuantity.subscribe(
       data => this.totalQuantity = data
     );

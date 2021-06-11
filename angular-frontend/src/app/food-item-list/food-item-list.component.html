@@ -19,8 +19,8 @@
                             <td><img src="{{foodItem.imgUrl}}" class="img-responsive" height="30px" width="40px"></td> 
                             <!-- <td> {{ foodItem.imgUrl }} </td> -->
                             <td> 
-                                <button (click) ="updateFoodItem(foodItem.id)" class="ActionButtons btn btn-success" > Update </button>
-                                <button (click) ="deleteFoodItem(foodItem.id)" class="ActionButtons btn btn-danger" > Delete </button>
+                                <button (click) ="updateFoodItem(foodItem.id)" class="ActionButtons btn btn-success" id="FoodItemUpdate" > Update </button>
+                                <button (click) ="deleteFoodItem(foodItem.id)" class="ActionButtons btn btn-danger" id="FoodItemDelete" > Delete </button>
                                 <button (click) ="foodItemDetails(foodItem.id)" class="ActionButtons btn btn-success" id="FoodItemView"> View </button>
                              </td>
                            

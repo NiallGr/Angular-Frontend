@@ -28,19 +28,20 @@ const oktaConfig = Object.assign({
     router.navigate(['/login']);
   }
 }, myAppConfig.oidc);
-
-const routes: Routes = [
-  {path: 'login/callback', component: OktaCallbackComponent},
-  {path: 'login', component: LoginComponent},
-
-  {path: 'fooditems', component: FoodItemListComponent, canActivate: [ OktaAuthGuard ]},
-  {path: 'create-fooditem', component: CreateFooditemComponent, canActivate: [ OktaAuthGuard ]},
   
-  {path: 'update-fooditem/:id', component: UpdateFooditemComponent, canActivate: [ OktaAuthGuard ]},
+const routes: Routes = [
+  // None guarded routes
+  {path: 'login/callback', component: OktaCallbackComponent}, 
+  {path: 'login', component: LoginComponent},
   {path: 'cart-details', component: CartDetailsComponent},
   {path: 'checkout', component: CheckoutComponent},
-  {path: 'fooditem-details/:id', component: FooditemDetailsComponent, canActivate: [ OktaAuthGuard ]},
   {path: 'products', component: CustomerFoodItemListComponent},
+  // Okta guard routes
+  {path: 'fooditems', component: FoodItemListComponent, canActivate: [ OktaAuthGuard ]},
+  {path: 'create-fooditem', component: CreateFooditemComponent, canActivate: [ OktaAuthGuard ]},
+  {path: 'update-fooditem/:id', component: UpdateFooditemComponent, canActivate: [ OktaAuthGuard ]},
+  {path: 'fooditem-details/:id', component: FooditemDetailsComponent, canActivate: [ OktaAuthGuard ]},
+  // Invaled url redirect routes
   {path: '', redirectTo: "products", pathMatch: 'full'},
   {path: '**', redirectTo: "products", pathMatch: 'full'},
   

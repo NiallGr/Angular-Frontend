@@ -10,12 +10,12 @@
         </div>
         <!-- Food Item lists -->
         <div class="col-2 AdminNavBar">
-             <a *ngIf="isAuthenticated" class="AdminNavBar" routerLink="fooditems" routerLinkActive="active" > Food Items List </a>
+             <a *ngIf="isAuthenticated" class="AdminNavBar" routerLink="fooditems" routerLinkActive="active" id="foodItemList"> Food Items List </a>
             </div>
 
         <!-- Add Food Item -->
         <div class="col-2 AdminNavBar">
-            <a  *ngIf="isAuthenticated" class="AdminNavBar" routerLink="create-fooditem" routerLinkActive="active"> Add food Item </a>
+            <a  *ngIf="isAuthenticated" class="AdminNavBar" routerLink="create-fooditem" routerLinkActive="active" id="CreateFoodItem"> Add food Item </a>
         </div>
 
         <!-- User Name -->
@@ -25,7 +25,7 @@
           <!-- Login & Logout -->
         <div class="col-2"> 
             <!-- <button class="loginlogoutBTN" *ngIf="!isAuthenticated" routerLink="/login" >Login</button> -->
-            <button class="loginlogoutBTN" *ngIf="isAuthenticated" (click)="logout()" >Logout</button> 
+            <button class="loginlogoutBTN" *ngIf="isAuthenticated" (click)="logout()" id="adminLogout" >Logout</button> 
         </div>
     </div>
   
