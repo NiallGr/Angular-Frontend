@@ -1,3 +1,4 @@
+<!-- ADMIN HOMEPAGE -->
 <h2> Food Items </h2>
 <input type="text" [(ngModel)]="filters.keyword" name="keyword" (input)="getFoodItems()">
 <table class = "table table-striped mb-5" >
@@ -17,9 +18,9 @@
                             <td scope="col"> {{ foodItem.foodGroup }} </td>
                             <td scope="col">  {{ foodItem.price | currency:'USD':true }} </td>
                             <td><img src="{{foodItem.imgUrl}}" class="img-responsive" height="30px" width="40px"></td> 
-                            <!-- <td> {{ foodItem.imgUrl }} </td> -->
+                         
                             <td> 
-                                <button (click) ="updateFoodItem(foodItem.id)" class="ActionButtons btn btn-success" id="FoodItemUpdate" > Update </button>
+                                <button (click) ="updateFoodItem(foodItem.id)" class="ActionButtons btn btn-success" id="FoodItemUpdate" > Update </button> 
                                 <button (click) ="deleteFoodItem(foodItem.id)" class="ActionButtons btn btn-danger" id="FoodItemDelete" > Delete </button>
                                 <button (click) ="foodItemDetails(foodItem.id)" class="ActionButtons btn btn-success" id="FoodItemView"> View </button>
                              </td>

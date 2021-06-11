@@ -20,7 +20,7 @@ export class FooditemService {
   createFooditem(fooditem: FoodItem): Observable<Object> {
     return this.httpClient.post(`${this.baseURL}`, fooditem);
   }
-
+  // Get food Item by ID from the Spring/Database
   getfoodItemById(id: number): Observable<FoodItem>{
     return this.httpClient.get<FoodItem>(`${this.baseURL}/${id}`);
   }

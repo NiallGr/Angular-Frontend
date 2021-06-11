@@ -17,13 +17,14 @@ export class CreateFooditemComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  // Save food item 
     saveFoodItem() {
       this.foodItemService.createFooditem(this.fooditem).subscribe( data => {
         console.log(data);
       },
       error => console.log(error));
     }
-
+  // Navigate back to '/fooditems'
     goToFoodItemList() {
       this.router.navigate(['/fooditems'])
     };
