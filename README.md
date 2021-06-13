@@ -95,6 +95,7 @@ This is captured in "img: 1.1"
 
    -   Create okta account
    -   Create my-app-config (store okta account info)
+   -   admin login url - **http://localhost:4200/login**
    -   login component (Display Okta sign-in widget)
    -   login-status component (
    -   OktaGuard on components (No access when admin is not logged in)
