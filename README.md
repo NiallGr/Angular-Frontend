@@ -16,6 +16,8 @@ Built using/on :
 - Agile Scrum Development Cycle
 
 <!-- **Requirments: Java 1.8** -->
+Backend - https://github.com/NiallGr/springboot-backend
+Frontend - https://github.com/NiallGr/Angular-Frontend
 
 
 ## Prebuild  
