@@ -102,8 +102,8 @@ This is captured in "img: 1.1"
    -   login-status component (
    -   OktaGuard on components (No access when admin is not logged in)
    -   Nav bar display is dynamic based on Authencation or !Authencation 
-   -   **Login - Dinner2Dine123@gmail.com**
-   -   **Password - Dinner2Dine**
+   -   **Login - Dinner2Door123@gmail.com**
+   -   **Password - Dinner2Door**
 
     "img: 1.6" Click on images to see more clearly. 
 ![Checkout](https://user-images.githubusercontent.com/62908390/121792853-c2548880-cbae-11eb-8757-e4d21aa2a0a4.JPG)
