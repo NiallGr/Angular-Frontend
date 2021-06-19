@@ -19,6 +19,8 @@ Built using/on :
 Backend - https://github.com/NiallGr/springboot-backend
 Frontend - https://github.com/NiallGr/Angular-Frontend
 
+## Video Tour 
+https://www.youtube.com/watch?v=15wBsJSrAkw
 
 ## Prebuild  
 Created a workflow using the Scrum methodology: This workflow was spread out of 4 sprints, with a duration of 2 weeks in each sprint. (8 weeks total dev cycle)
@@ -132,7 +134,6 @@ This is captured in "img: 1.1"
 
 https://user-images.githubusercontent.com/62908390/121791687-6afbeb80-cba1-11eb-8bed-64541a899d6e.mp4
 
-AWS Deployment 
    
  
 
