@@ -36,7 +36,7 @@ const routes: Routes = [
   {path: 'cart-details', component: CartDetailsComponent},
   {path: 'checkout', component: CheckoutComponent},
   {path: 'products', component: CustomerFoodItemListComponent},
-  // Okta guard routes
+  // Okta guard paths
   {path: 'fooditems', component: FoodItemListComponent, canActivate: [ OktaAuthGuard ]},
   {path: 'create-fooditem', component: CreateFooditemComponent, canActivate: [ OktaAuthGuard ]},
   {path: 'update-fooditem/:id', component: UpdateFooditemComponent, canActivate: [ OktaAuthGuard ]},

@@ -8,9 +8,9 @@ import { Purchase } from '../common/purchase';
   providedIn: 'root'
 })
 export class CheckoutService {
-
+// Local host 8081 for localDB 
   private purchaseUrl = "http://localhost:8081/api/checkout/purchase";
-  
+  private RemoteURl = "http://Dinnertodinerunning-env.eba-vxjkhwus.ca-central-1.elasticbeanstalk.com/api/checkout/purchase";
   constructor(private httpClient: HttpClient) { 
 
      

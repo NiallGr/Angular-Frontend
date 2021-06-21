@@ -8,8 +8,10 @@ import { FoodItem } from '../common/food-item'
   providedIn: 'root'
 })
 export class FooditemService {
-
+// Local host 8081 for localDB 
     private baseURL = "http://localhost:8081/api/v1/foodItems";
+    //  RDC AWS DATABASE
+    private RemoteURl = "http://Dinnertodinerunning-env.eba-vxjkhwus.ca-central-1.elasticbeanstalk.com/api/v1/foodItems";
  
   constructor(private httpClient: HttpClient) { }
     // retrieve items from Backend
